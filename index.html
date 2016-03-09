@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js – The HTML Presentation Framework</title>
+		<title>Common Fate Model for Unison Source Separation</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -14,9 +14,9 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
+		<link href='https://fonts.googleapis.com/css?family=Fira+Sans' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/alabs.css" id="theme">
-
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
@@ -41,150 +41,24 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section class="cover" data-background="css/theme/alabs/alabs_header.jpg" data-background-repeat="no-repeat" data-background-size="100%" data-background-position="0 0"  data-state="no-title-footer no-progressbar">
-					<h2>HTML5 Presentation Layout</h2>
-					<h3>A nice subtitle</h3>
+					<h2>Common Fate Model for Unison Source Separation</h2>
 					<p>
-						Firstname Lastname<br />
-						firstname.lastname@audiolabs-erlangen.de
+						<b>Fabian-Robert Stöter</b>, Antoine Liutkus, Roland Badeau, Bernd Edler, Paul Magron
 					</p>
 					<p>
-					February 21, 2014
+					March 21, 2016
 					</p>
 					<p>
-					<img src="css/theme/alabs/FAU_bw.svg" id="FAU" alt="">
-					<img src="css/theme/alabs/IIS_bw.svg" id="IIS" alt="">
+					<img src="css/theme/alabs/FAU_bw.svg" id="FAU" class="logo" alt="">
+					<img src="css/theme/alabs/IIS_bw.svg" id="IIS" class="logo" alt="">
+					<img src="https://hal.inria.fr/public/logo_INRIA.png" class="logo" id="INRIA" alt="">
+					<img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f7/Institut_Mines-Télécom.svg/532px-Institut_Mines-Télécom.svg.png" id="Telekom" class="logo" alt="">
+
 				</section>
 
-				<section>
-					<h2>Header</h2>
-					<p>Typewriter etsy messenger bag <a href="">fingerstache</a>, aesthetic vinyl semiotics twee <strong>DIY</strong> forage chillwave. Thundercats ennui messenger bag, <em>squid</em> carles chillwave shoreditch pickled cliche <b>letterpress</b>. DIY beard locavore <i>occupy</i> salvia, whatever single-origin <code>coffee</code> fanny pack 3 wolf moon typewriter gastropub kale chips. Ennui keffiyeh thundercats jean shorts biodiesel. Terry richardson, swag blog locavore umami vegan helvetica. Fingerstache kale chips.</p>
-					<aside class="notes">
-						Typewriter etsy messenger bag fingerstache.
-					</aside>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown Slide
-
-						If  you like you can enter your slide in markdown [link](http://daringfireball.net/projects/markdown/).
-					</script>
-				</section>
-
-				<section>
-					<h2>Lists</h2>
-					<ul>
-						<li>Ennui keffiyeh thundercats</li>
-						<li><a href="http://www.audiolabs-erlangen.de" data-preview-link>AudioLabs Website</a></li>
-						<li>Terry richardson, swag blog
-							<ul>
-								<li>Locavore umami vegan helvetica</li>
-								<li>Fingerstache kale chips
-									<ul>
-										<li>Wurst
-											<ul>
-												<li>test</li>
-												<li>test</li>
-											</ul>
-										</li>
-										<li>Käse</li>
-									</ul>
-								</li>
-								<li>Keytar sriracha gluten-free</li>
-							</ul>
-						</li>
-						<li>Before they sold out master</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Math Typesetting</h2>
-					<p>$$F(\omega) = \int_{-\infty}^{\infty} f(t) e^{-j \omega t} \mathrm{d} t$$</p>
-					<ul>
-						<li>
-							Math is rendered using MathJax
-						</li>
-						<li>
-							Math rendering requires a working internet connection
-						</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Quote</h2>
-					<figure>
-						<blockquote>
-							<p>Typewriter etsy messenger bag fingerstache, aesthetic vinyl semiotics twee DIY forage chillwave. Thundercats ennui messenger bag, squid carles chillwave shoreditch pickled cliche letterpress.</p>
-						</blockquote>
-						<figcaption>Author Name</figcaption>
-					</figure>
-				</section>
-
-				<section>
-					<h2>Table</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							</tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							</tr>
-						</tbody>
-					</table>
-					<p>Typewriter etsy messenger bag fingerstache.</p>
-				</section>
-
-				<section>
-					<h2>Code listing</h2>
-					<pre><code data-trim contenteditable>
-&lt;html lang="en"&gt;
-&lt;head&gt;&lt;!--Comment--&gt;
-&lt;title&gt;Shower&lt;/title&gt;
-&lt;meta charset="UTF-8"&gt;
-&lt;link rel="stylesheet" href="s/screen.css"&gt;
-&lt;script src="js/jquery.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-						</code></pre>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Contributing</h2>
-					<ul>
-						<li>The source code for this template is managed on <a href="http://work.audiolabs.uni-erlangen.de:8088/templates/html5">GitLab</a></li>
-						<li>You do not need write permissions to change the code</li>
-						<li>Simply fork the repository and start hacking</li>
-						<li>Feedback, Forks and Merge Requests are welcome!</li>
-						<li>Styling is written in SASS in <code>styles/screen.scss</code></li>
-						<li>Browser-interoperability is required</li>
-					</ul>
-				</section>
-			</div>
 			<div class='footer'>
 				<div id="copyright">&#9400; AudioLabs, 2015</div>
-				<div id="middlebox">A nice long Title </br> with two lines </div>
+				<div id="middlebox">Common Fate Model for Unison Source Separation </div>
 				<img src="css/theme/alabs/alabs_logo.svg" alt="Logo" />
 			</div>
 
