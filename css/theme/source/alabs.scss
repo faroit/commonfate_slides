@@ -26,9 +26,9 @@ $mainColor: #222;
 $headingColor: ;
 
 $mainFontSize: 38px;
-$mainFont: Helvetica, sans-serif;
+$mainFont: 'Fira Sans', sans-serif;
 $headingColor: $orange;
-$headingFont: Helvetica, sans-serif;
+$headingFont: 'Fira Sans', sans-serif;
 $headingTextShadow: none;
 $headingLetterSpacing: normal;
 $headingTextTransform: none;
@@ -102,9 +102,9 @@ body {
 
 .reveal .footer #copyright {
     left: 0;
-    margin-left: 1em;
+    margin-left: 2em;
     text-align: left;
-    bottom: -1.4em;
+    bottom: 0em;
 }
 
 .no-title-footer .footer {
@@ -149,16 +149,16 @@ body {
     padding-top: 4em !important;
 }
 
-.reveal .cover #FAU, .reveal .cover #IIS {
+.reveal .cover img {
     border: none;
     box-shadow: none;
     margin-top: 2.5em;
-    height: 1.5em;
-    margin-left: 4em;
+    height: 1.6em;
+    margin-left: 1em;
 }
 
-.reveal .cover #IIS {
-    margin-left: 5em;
+.reveal .cover .logo {
+    margin-left: 1em;
 }
 
 .reveal section img {
@@ -178,6 +178,7 @@ body {
     color: rgba( 0, 0, 0, 0.2 );
     font-size: 4.8vmax;
     background-color: transparent;
+  	font-family: $mainFont;
 }
 
 .no-title-footer .reveal .slide-number {
