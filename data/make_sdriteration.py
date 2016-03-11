@@ -5,7 +5,6 @@ import math
 import pandas as pd
 import seaborn as sns
 import matplotlib as mpl
-from matplotlib.transforms import BlendedGenericTransform
 from numpy import median
 
 if __name__ == '__main__':
@@ -18,14 +17,24 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     plt.rc('text', usetex=True)
-    mpl.rcParams['font.family'] = 'serif'
+    plt.rc('font', family='FiraSans')
+
+    mpl.rcParams['text.latex.preamble'] = [
+        r"\usepackage[sfdefault,scaled=.85]{FiraSans}",
+        r"\usepackage[T1]{fontenc}",
+        r"\usepackage{textcomp}",
+        r"\usepackage[varqu,varl]{zi4}",
+        r"\usepackage{amsmath,amsthm}",
+        r"\usepackage[cmintegrals]{newtxsf}"
+    ]
+    mpl.rcParams['font.family'] = 'sans-serif'
+    mpl.rcParams['font.sans-serif'] = 'FiraSans'
     mpl.rcParams['text.latex.unicode'] = 'True'
 
     sns.set()
     sns.set_context("paper")
     sns.set_style(
         "white", {
-            "grid.color": '.9',
             "font.family":
             "serif", 'font.serif':
             'ptmrr8re'
@@ -40,15 +49,15 @@ if __name__ == '__main__':
     fig_size = np.array([fig_width, fig_height])
 
     params = {'backend': 'ps',
-              'axes.labelsize': 14,
-              'font.size': 14,
-              'legend.fontsize': 12,
-              'xtick.labelsize': 12,
-              'ytick.labelsize': 12,
+              'axes.labelsize': 11,
+              'legend.fontsize': 11,
+              'xtick.labelsize': 10,
+              'ytick.labelsize': 10,
               'text.usetex': True,
-              'font.family': 'serif',
-              'font.serif': 'ptmrr8re',
-              'figure.figsize': fig_size * 2}
+              'font.family': 'sans-serif',
+              'font.sans-serif': 'FiraSans',
+              'font.size': 11,
+              'figure.figsize': fig_size}
 
     plt.rcParams.update(params)
 
