@@ -148,6 +148,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks( 'grunt-contrib-connect' );
 	grunt.loadNpmTasks( 'grunt-autoprefixer' );
 	grunt.loadNpmTasks( 'grunt-zip' );
+	grunt.loadNpmTasks( "grunt-make" );
 
 	// Default task
 	grunt.registerTask( 'default', [ 'css', 'js' ] );
@@ -173,4 +174,5 @@ module.exports = function(grunt) {
 	// Run tests
 	grunt.registerTask( 'test', [ 'jshint', 'qunit' ] );
 
+	grunt.registerTask( 'images', ['make:images/boxplot.png:images/iterations.png'] );
 };
