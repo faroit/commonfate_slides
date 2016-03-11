@@ -1,8 +1,8 @@
 /**
- * A simple theme for reveal.js presentations, similar
- * to the default theme. The accent color is darkblue.
+ * AudioLabs theme based on the default theme. The accent color is orange.
  *
- * This theme is Copyright (C) 2012 Owen Versteeg, https://github.com/StereotypicalApps. It is MIT licensed.
+ * * Copyright 2016 International Audio Laboratories Erlangen
+ * This theme is based on https://github.com/StereotypicalApps by Owen Versteeg (MIT License)
  * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
 
@@ -11,6 +11,7 @@
 @import "../template/mixins";
 @import "../template/settings";
 // ---------------------------------------------
+@import url(../../lib/font/fira/fira-sans.css);
 
 $orange: #ED8C01;
 $grey: #707070;
@@ -23,7 +24,7 @@ $green: #6FD900;
 $backgroundColor: #fff;
 
 $mainColor: #222;
-$headingColor: ;
+$headingColor: transparent;
 
 $mainFontSize: 38px;
 $mainFont: 'Fira Sans', sans-serif;
@@ -77,8 +78,7 @@ body {
     position: absolute;
     bottom: 0px;
     padding: 1em;
-    font-size: 0.5em;
-    font-size: 1.3vmax;
+    font-size: 0.4em;
     line-height: 1.3em;
 }
 
