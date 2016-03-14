@@ -1,7 +1,7 @@
 import commonfate
 import pylab as plt
 import numpy as np
-np.random.seed(64)
+np.random.seed(80)
 import itertools
 import soundfile as sf
 import argparse
@@ -11,17 +11,17 @@ import matplotlib as mpl
 import scipy.signal
 
 
-def displaySTFT(X, name=None):
+def displaySTFT(X, name=None, limit=None):
     fig, ax = plt.subplots(1, 1)
     plt.figure(1)
     plt.pcolormesh(
-        np.flipud(abs(np.squeeze(X))),
+        abs(np.squeeze(X)),
         vmin=0,
-        vmax=10,
+        vmax=20,
         cmap='cubehelix_r',
     )
-    # plt.axis((0, 240, 0, 352))
-    # fig.tight_layout()
+    if limit is not None:
+        plt.axis(limit)
 
     if name is None:
         plt.show()
@@ -41,7 +41,7 @@ def displayMSTFT(Z, name=None):
             vmax=10,
             cmap='cubehelix_r',
         )
-        # plt.axis((0, 48, 4, 28))
+        plt.axis((0, 48, 4, 28))
         plt.xticks([])
         plt.xlabel('')
         plt.yticks([])
@@ -73,7 +73,7 @@ def process(
     xstft = commonfate.transform.forward(xwave, pref['nfft'], pref['thop'])
     print xstft.shape
 
-    xstft = xstft[:384-32, 16:256]
+    xstft = xstft[:384-32, :]
     print xstft.shape
 
     # compute modulation STFT
@@ -118,17 +118,14 @@ def process(
         )
         estimates_k.append(wavej)
     #
-    displaySTFT(At)
-    displayMSTFT(P)
-
     if display:
-        displaySTFT(xstft, 'stft.png')
-        displaySTFT(stf_k[0], 'stft_k0.png')
-        displaySTFT(stf_k[1], 'stft_k1.png')
+        displaySTFT(At, 'At.png')
+        displaySTFT(xstft, 'stft.png', (0, 279, 0, 352))
+        displaySTFT(stf_k[0], 'stft_k0.png', (0, 279, 0, 352))
+        displaySTFT(stf_k[1], 'stft_k1.png', (0, 279, 0, 352))
         displayMSTFT(z[..., 0], 'cft.png')
         displayMSTFT(z_k[0][..., 0], 'cft_k0.png')
         displayMSTFT(z_k[1][..., 0], 'cft_k1.png')
-        displaySTFT(At, 'At.png')
         displayMSTFT(P, 'P.png')
 
 if __name__ == '__main__':
@@ -140,7 +137,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     # Parsing settings
-    with open("settings.yml", 'r') as f:
+    with open("data/settings.yml", 'r') as f:
         doc = yaml.load(f)
 
     pref = doc['general']
