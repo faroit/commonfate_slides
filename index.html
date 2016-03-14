@@ -6,8 +6,8 @@
 
 		<title>Common Fate Model for Unison Source Separation</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="Common Fate Model for Unison Source Separation<">
+		<meta name="author" content="Fabian-Robert Stöter">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -28,7 +28,6 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
-
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
@@ -55,11 +54,42 @@
 					<img src="images/telecom.png" id="telecom" class="logo" alt="">
 
 				</section>
+
 				<section>
-					<h2>Formulas</h2>
-					<p>$$\forall\left(a,b,f,t\right),x\left(a,b,f,t\right)=\sum\nolimits_{j}s_{j}\left(a,b,f,t\right)$$</p>
+					<h2>NMF</h2>
 					<p>
-						$$P_{j}^{\alpha}\left(a,b,f,t\right)=A_{j}\left(a,b,f\right)H_{j}\left(t\right)$$
+						$$\hat{\mathbf{V}}_{f,t} \approx \sum\limits_{j=1}^{J}w_{fj}\cdot h^T_{tj} \approx \sum\limits_{j=1}^{J} \mathbf{w}_{j} \circ  \mathbf{h}_{j} \approx \mathbf{W}\mathbf{H}$$
+					</p>
+				</section>
+				<section>
+					<h2>NMF</h2>
+					<p>
+						<img src="images/nmf.svg" alt="" />
+					</p>
+				</section>
+				<section>
+					<h2>CPD/PARAFAC/NTF</h2>
+					<p>
+						$$\hat{\mathbf{V}}_{f,b,t} \approx \sum\limits_{j=1}^{J}w_{fj}\ m_{bj} \ h_{tj} \approx \sum\limits_{j=1}^{J} \mathbf{w}_{j}(f) \circ \mathbf{m}_{j}(b) \circ \mathbf{h}_{j}(t)$$
+					</p>
+				</section>
+				<section>
+					<h2>CPD/PARAFAC/NTF</h2>
+					<p>
+						<img src="images/cpd.svg" alt="" />
+					</p>
+				</section>
+
+				<section>
+					<h2>CFM</h2>
+					<p>
+						$$\hat{\mathbf{V}}_{a,b,f,t} \approx \sum\limits_{j=1}^{J}p_{abfj}\ h_{tj} \approx \sum\limits_{j=1}^{J} \mathbf{P}_{j}(a,b,f) \circ  \mathbf{h}_{j}(t)$$
+					</p>
+				</section>
+				<section>
+					<h2>Common Fate Model</h2>
+					<p>
+						<img src="images/cfm.svg" alt="" />
 					</p>
 				</section>
 
@@ -84,9 +114,18 @@
 					<h2>Number of Components</h2>
 					<img src="images/iterations.png" alt="" />
 				</section>
+				<section>
+					<h2>Open Source Implementation</h2>
+					<pre><code data-trim data-noescape class="bash">
+						pip install commonfate
+					</code></pre>
 
+					<pre><code data-trim data-noescape class="python">
+						np.einsum('abfj,tj->abft', A, H)
+					</code></pre>
+				</section>
 			<div class='footer'>
-				<div id="copyright">&#9400; AudioLabs, 2015</div>
+				<div id="copyright">&#9400; AudioLabs, 2016</div>
 				<div id="middlebox">Common Fate Model for Unison Source Separation </div>
 				<img src="css/theme/alabs/alabs_logo.svg" alt="Logo" />
 			</div>
