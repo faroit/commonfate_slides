@@ -1,12 +1,15 @@
 .PHONY: cleanall
 
-all: images/boxplot.png images/iterations.png
+all: images/boxplot.svg images/iterations.svg images/gridplot.svg
 
 cleanall:
-	- rm -f images/boxplot.png images/iterations.png
+	- rm -f images/boxplot.svg images/iterations.svg
 
-images/boxplot.png:
+images/gridplot.svg:
+	python data/make_gridplots.py $@
+
+images/boxplot.svg:
 	python data/make_boxplot.py data/all.pickle $@
 
-images/iterations.png:
+images/iterations.svg:
 	python data/make_sdriteration.py data/all.pickle $@

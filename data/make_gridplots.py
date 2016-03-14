@@ -7,6 +7,7 @@ import seaborn as sns
 import matplotlib as mpl
 from scipy.io import loadmat
 from matplotlib.transforms import BlendedGenericTransform
+import itertools
 
 
 def displaySTFT(X, name=None):
@@ -56,31 +57,56 @@ def displayMSTFT(Z, name=None):
 
 if __name__ == '__main__':
 
+    parser = argparse.ArgumentParser(
+        description='Perform pitch estimation for given sensor data file.')
+
+    parser.add_argument(dest='output', type=str, default=None,
+                        help='pdf')
+
+    args = parser.parse_args()
+
     plt.rc('text', usetex=True)
-    mpl.rcParams['font.family'] = 'serif'
+    plt.rc('font', family='FiraSans')
+
+    mpl.rcParams['text.latex.preamble'] = [
+        r"\usepackage[sfdefault,scaled=.85]{FiraSans}",
+        r"\usepackage[T1]{fontenc}",
+        r"\usepackage{textcomp}",
+        r"\usepackage[varqu,varl]{zi4}",
+        r"\usepackage{amsmath,amsthm}",
+        r"\usepackage[cmintegrals]{newtxsf}"
+    ]
+    mpl.rcParams['font.family'] = 'sans-serif'
+    mpl.rcParams['font.sans-serif'] = 'FiraSans'
     mpl.rcParams['text.latex.unicode'] = 'True'
 
     sns.set()
     sns.set_context("paper")
     sns.set_style(
         "white", {
-            "grid.color": '.9',
             "font.family":
             "serif", 'font.serif':
             'ptmrr8re'
         }
     )
 
+    fig_width_pt = 244.6937  # Get this from LaTeX using \showthe\columnwidth
+    inches_per_pt = 1.0 / 72.27               # Convert pt to inch
+    golden_mean = (math.sqrt(5) - 1.0) / 2.0         # Aesthetic ratio
+    fig_width = fig_width_pt * inches_per_pt  # width in inches
+    fig_height = fig_width * golden_mean      # height in inches
+    fig_size = np.array([fig_width, fig_height])
+
     params = {'backend': 'ps',
-              'axes.labelsize': 14,
-              'font.size': 14,
-              'legend.fontsize': 12,
-              'xtick.labelsize': 12,
-              'ytick.labelsize': 12,
+              'axes.labelsize': 11,
+              'legend.fontsize': 11,
+              'xtick.labelsize': 10,
+              'ytick.labelsize': 10,
               'text.usetex': True,
-              'font.family': 'serif',
-              'font.serif': 'ptmrr8re',
-              }
+              'font.family': 'sans-serif',
+              'font.sans-serif': 'FiraSans',
+              'font.size': 11,
+              'figure.figsize': fig_size * 1.6}
 
     plt.rcParams.update(params)
 
@@ -169,4 +195,4 @@ if __name__ == '__main__':
     # )
     # ax[0, 0].add_artist(con)
     fig.tight_layout(w_pad=0.5, h_pad=0)
-    fig.savefig('figures/gridplot.pdf', bbox_inches='tight', dpi=300)
+    fig.savefig(args.output, bbox_inches='tight', dpi=300)

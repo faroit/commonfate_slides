@@ -174,5 +174,5 @@ module.exports = function(grunt) {
 	// Run tests
 	grunt.registerTask( 'test', [ 'jshint', 'qunit' ] );
 
-	grunt.registerTask( 'images', ['make:images/boxplot.png:images/iterations.png'] );
+	grunt.registerTask( 'images', ['make:all'] );
 };
