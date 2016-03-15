@@ -6,12 +6,10 @@
     <meta name="description" content="CFM Demo">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="author" content="International Audio Laboratories Erlangen">
-    <link type="text/css" rel="stylesheet" rev="stylesheet" media="screen" href="https://www.audiolabs-erlangen.de/assets/multitrack/screen.css" />
-    <link type="text/css" rel="stylesheet" rev="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link type="text/css" rel="stylesheet" rev="stylesheet" media="screen" href="../lib/css/multitrack.css" />
+    <link type="text/css" rel="stylesheet" rev="stylesheet" media="screen" href="../lib/font-awesome/css/font-awesome.min.css" />
+    <script type="text/javascript" src="../lib/js/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <style media="screen">
     @import url(../lib/font/fira/fira-sans.css);
 
@@ -23,38 +21,40 @@
 </head>
 
 <body>
-    <h4>Viola + Tenor Sax</h4>
     <div class='player'>
+        <img class="seekable" src="41-66_mix.png" data-style="width: auto; margin: 0px -10px 0px -12px;">
+        <audio title="Viola + Tenor Sax Mix" src="41-66_mix.wav" style="background-color:  rgba(255, 0, 255, 0.1)" data-img="41-66_mix.png"></audio>
 
-        <audio title="Target: Viola           - Method: cfm        - SDR: 6.51487110568" src="41-66_cfm_2k_1_41_sdr6.51487110568.wav"></audio>
+        <audio title="Target: Viola           - Method: cfm        - SDR: 6.51487110568" src="41-66_cfm_2k_1_41_sdr6.51487110568.wav" style="background-color:  rgba(0, 0, 0, 0.1)" data-img="41-66_cfm_2k_1_41_sdr6.51487110568.png"></audio>
 
-        <audio title="Target: Viola           - Method: cfmm       - SDR: 6.77543349621" src="41-66_cfmm_2k_9_41_sdr6.77543349621.wav"></audio>
+        <!-- <audio title="Target: Viola           - Method: cfmm       - SDR: 6.77543349621" src="41-66_cfmm_2k_9_41_sdr6.77543349621.wav"  style="background-color:  rgba(0, 0, 0, 0.1)" data-img="41-66_cfmm_2k_9_41_sdr6.77543349621.png"></audio>
 
-        <audio title="Target: Viola           - Method: cfmmod     - SDR: 5.08989854727" src="41-66_cfmmod_2k_0_41_sdr5.08989854727.wav"></audio>
+        <audio title="Target: Viola           - Method: cfmmod     - SDR: 5.08989854727" src="41-66_cfmmod_2k_0_41_sdr5.08989854727.wav"  style="background-color:  rgba(0, 0, 0, 0.1)" data-img="41-66_cfmmod_2k_0_41_sdr5.08989854727.png"></audio> -->
 
-        <audio title="Target: Viola           - Method: mod        - SDR: 4.98745801578" src="41-66_mod_2k_4_41_sdr4.98745801578.wav"></audio>
+        <audio title="Target: Viola           - Method: mod        - SDR: 4.98745801578" src="41-66_mod_2k_4_41_sdr4.98745801578.wav"  style="background-color:  rgba(0, 0, 0, 0.1)" data-img="41-66_mod_2k_4_41_sdr4.98745801578.png"></audio>
 
-        <audio title="Target: Viola           - Method: nmf        - SDR: 6.87264732235" src="41-66_nmf_2k_6_41_sdr6.87264732235.wav"></audio>
+        <audio title="Target: Viola           - Method: nmf        - SDR: 6.87264732235" src="41-66_nmf_2k_6_41_sdr6.87264732235.wav"  style="background-color:  rgba(0, 0, 0, 0.1)" data-img="41-66_nmf_2k_6_41_sdr6.87264732235.png"></audio>
 
-        <audio title="Target: Tenor Sax       - Method: cfm        - SDR: 8.05954094744" src="41-66_cfm_2k_1_66_sdr8.05954094744.wav"></audio>
+        <audio title="Target: Tenor Sax       - Method: cfm        - SDR: 8.05954094744" src="41-66_cfm_2k_1_66_sdr8.05954094744.wav"  style="background-color:  rgba(0, 0, 0, 0.3)" data-img="41-66_cfm_2k_1_66_sdr8.05954094744.png"></audio>
 
-        <audio title="Target: Tenor Sax       - Method: cfmm       - SDR: 5.41122810493" src="41-66_cfmm_2k_9_66_sdr5.41122810493.wav"></audio>
+        <!-- <audio title="Target: Tenor Sax       - Method: cfmm       - SDR: 5.41122810493" src="41-66_cfmm_2k_9_66_sdr5.41122810493.wav"  style="background-color:  rgba(0, 0, 0, 0.3)" data-img="41-66_cfmm_2k_9_66_sdr5.41122810493.png"></audio>
 
-        <audio title="Target: Tenor Sax       - Method: cfmmod     - SDR: 6.89971355181" src="41-66_cfmmod_2k_0_66_sdr6.89971355181.wav"></audio>
+        <audio title="Target: Tenor Sax       - Method: cfmmod     - SDR: 6.89971355181" src="41-66_cfmmod_2k_0_66_sdr6.89971355181.wav"  style="background-color:  rgba(0, 0, 0, 0.3)" data-img="41-66_cfmmod_2k_0_66_sdr6.89971355181.png"></audio> -->
 
-        <audio title="Target: Tenor Sax       - Method: mod        - SDR: 3.34067008893" src="41-66_mod_2k_4_66_sdr3.34067008893.wav"></audio>
+        <audio title="Target: Tenor Sax       - Method: mod        - SDR: 3.34067008893" src="41-66_mod_2k_4_66_sdr3.34067008893.wav"  style="background-color:  rgba(0, 0, 0, 0.3)" data-img="41-66_mod_2k_4_66_sdr3.34067008893.png"></audio>
 
-        <audio title="Target: Tenor Sax       - Method: nmf        - SDR: 5.47229044739" src="41-66_nmf_2k_6_66_sdr5.47229044739.wav"></audio>
+        <audio title="Target: Tenor Sax       - Method: nmf        - SDR: 5.47229044739" src="41-66_nmf_2k_6_66_sdr5.47229044739.wav"  style="background-color:  rgba(0, 0, 0, 0.3)" data-img="41-66_nmf_2k_6_66_sdr5.47229044739.png"></audio>
 
     </div>
 
-    <script type="text/javascript" src="https://www.audiolabs-erlangen.de/assets/multitrack/player.js"></script>
+    <script type="text/javascript" src="../lib/js/player.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             var settings = {
               onlyradiosolo: true,
               globalsolo: true,
               repeat: true,
+              switchimage: true,
             };
             $(".player").multitrackAudioPlayer(settings);
         });
