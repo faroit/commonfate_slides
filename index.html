@@ -113,41 +113,25 @@
 				<section>
 					<h2>NMF</h2>
 					<p>
-						$$\hat{\mathbf{V}}_{f,t} \approx \sum\limits_{j=1}^{J}w_{fj}\cdot h^T_{tj} \approx \sum\limits_{j=1}^{J} \mathbf{w}_{j} \circ  \mathbf{h}_{j} \approx \mathbf{W}\mathbf{H}$$
-					</p>
-				</section>
-				<section>
-					<h2>NMF</h2>
-					<p>
 						<img src="images/nmf.svg" width="100%" alt="" />
+						$$\sum\limits_{j=1}^{J} \mathbf{w}_{j}(f) \circ  \mathbf{h}_{j}(t) $$
 					</p>
 				</section>
 				<section>
 					<h2>CPD/PARAFAC/NTF</h2>
-					<ul>
+					<!-- <ul>
 						<li>Take the “outer-product” of corresponding columns from each factor matrix to form a simple (rank-1) tensor</li>
-					</ul>
-					<p>
-						$$\hat{\mathbf{V}}_{f,b,t} \approx \sum\limits_{j=1}^{J}w_{fj}\ m_{bj} \ h_{tj} \approx \sum\limits_{j=1}^{J} \mathbf{w}_{j}(f) \circ \mathbf{m}_{j}(b) \circ \mathbf{h}_{j}(t)$$
-					</p>
-				</section>
-				<section>
-					<h2>CPD/PARAFAC/NTF</h2>
+					</ul> -->
 					<p>
 						<img src="images/cpd.svg" width="100%" alt="" />
-					</p>
-				</section>
-
-				<section>
-					<h2>CFM</h2>
-					<p>
-						$$\hat{\mathbf{V}}_{a,b,f,t} \approx \sum\limits_{j=1}^{J}p_{abfj}\ h_{tj} \approx \sum\limits_{j=1}^{J} \mathbf{P}_{j}(a,b,f) \circ  \mathbf{h}_{j}(t)$$
+						$$\sum\limits_{j=1}^{J} \mathbf{w}_{j}(f) \circ \mathbf{m}_{j}(b) \circ \mathbf{h}_{j}(t)$$
 					</p>
 				</section>
 				<section>
 					<h2>Common Fate Model</h2>
 					<p>
 						<img src="images/cfm.svg" width="100%" alt="" />
+							$$\sum\limits_{j=1}^{J} \mathbf{P}_{j}(a,b,f) \circ \mathbf{h}_{j}(t)$$
 					</p>
 				</section>
 
