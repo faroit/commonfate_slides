@@ -137,16 +137,14 @@
 
 				<section>
 					<h2>Models</h2>
-					<small>
-					<ul>
-						<li>NMF: Non-Negative Matrix Factorization $V(f,t) = W(f)\times H(t)$ </li>
-						<li>CFM: Common Fate Model, $V(a,b,f,t) = P(a,b,f)\times H(t)$</li>
-						<li>HR-NMF: High Resolution NMF model, Subband AR filtering of NMF excitation </li>
-						<li>MOD: <a href="#">Barker 2013</a> $V(f,m,t) = W(f)\times A(m)\times H(t)$</li>
-						<li>CFMM: Common Fate Magnitude Model, $V(a,b,f,t) = P(a,b,f)\times H(t)$</li>
-						<li>CFMMOD: CFMM with $a=1$, $V(a,b,f,t) = P(a,b,f)\cdot H(t)$</li>
+					<ul style="font-size: 28px">
+						<li><strong>NMF</strong> Non-Negative Matrix Factorization</li>
+						<li><strong>CFM</strong> Common Fate Model</li>
+						<li><strong>HR-NMF</strong> High Resolution NMF model</li>
+						<li><strong>MOD</strong> CP on modulation spectrograms <a href="#">Barker 2013</a></li>
+						<li><strong>CFMM</strong> Common Fate Magnitude Model</li>
+						<li><strong>CFMMOD</strong> CFMM with $a=1$</li>
 					</ul>
-					</small>
 				</section>
 				<section data-background="#ED8C01">
 					<h1 style='color:white; font-size: 2.4em'>Evaluation</h1>
@@ -197,6 +195,7 @@
     		minScale: 0.2,
     		maxScale: 5,
 				transition: 'none', // none/fade/slide/convex/concave/zoom
+				math: {config: 'TeX-AMS_SVG-full'},
 
 				// Optional reveal.js plugins
 				dependencies: [
