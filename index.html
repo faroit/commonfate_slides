@@ -44,7 +44,7 @@
 				<section class="cover" data-background="css/theme/alabs/alabs_header.jpg" data-background-repeat="no-repeat" data-background-size="100%" data-background-position="0 0"  data-state="no-title-footer no-progressbar">
 					<h2>Common Fate Model for Unison Source Separation</h2>
 					<p>
-						<b>Fabian-Robert Stöter</b>, Antoine Liutkus, Roland Badeau, Bernd Edler, Paul Magron
+						<b>Fabian-Robert Stöter</b>, Antoine Liutkus, <br/>Roland Badeau, Bernd Edler, Paul Magron
 					</p>
 					<p>
 					March 21, 2016
@@ -139,13 +139,6 @@
 					<h1 style='color:white; font-size: 2.4em'>Common Fate Model</h1>
 				</section>
 				<section>
-					<h2>A Probabilistic Model for the CFT</h2>
-					<ul>
-						<li>...</li>
-					</ul>
-				</section>
-
-				<section>
 					<h2>NMF</h2>
 					<p>
 						<img src="images/nmf.svg" width="100%" alt="" />
@@ -182,7 +175,7 @@
 				<section data-background="#ED8C01">
 					<h1 style='color:white; font-size: 2.4em'>Evaluation</h1>
 				</section>
-				<section>
+				<!-- <section>
 					<h2>Parameters</h2>
 						<ul>
 							<li>STFT Window Size: $1024$</li>
@@ -191,43 +184,46 @@
 							<li>CFM Hopsize $(Na,Nb) = (2, 32)$</li>
 
 						</ul>
-				</section>
+				</section> -->
 
 				<section>
 					<h2>Dataset</h2>
 					<ul>
-						<li>single pitches (C4 at 261.63 Hz)
+						<li>Single pitches (C4 at 261.63 Hz)
 							<ul>
-								<li>violin</li>
-								<li>cello</li>
-								<li>tenor sax</li>
-								<li>english horn</li>
-								<li>flute</li>
+								<li>Violin</li>
+								<li>Cello</li>
+								<li>Tenor sax</li>
+								<li>English horn</li>
+								<li>Flute</li>
 							</ul>
 						</li>
 						<li>$\rightarrow$ ten mixtures of two instruments each</li>
-						<li>mixtures generated with a simple A — B — (A + B) scheme. </li>
+						<li>Mixtures generated with a simple A — B — (A + B) scheme. </li>
 						<li>Data were encoded in 44.1 kHz / 16 bit.</li>
 					</ul>
 				</section>
 
-				<section>
+				<!-- <section>
 					<h2>Comparison</h2>
 					<ul>
 						<li>All factorisations ran for 100 iterations and were repeated five times.</li>
 						<li>We chose $J = (2 \dots 6)$ components for each factorisation.</li>
 						<li>For j > 2 we used oracle clustering by SDR</li>
 					</ul>
-				</section>
+				</section> -->
 				<section>
 					<h2>Models</h2>
 					<ul style="font-size: 28px">
 						<li><strong>NMF</strong> Non-Negative Matrix Factorization</li>
-						<li><strong>CFM</strong> Common Fate Model</li>
+						<li><strong>MOD</strong> CPD on modulation spectrograms <a href="#">Barker 2013</a></li>
+						<li><strong>CFM</strong> Common Fate Model
+							<ul>
+								<li><strong>CFMM</strong> Common Fate Magnitude Model</li>
+								<li><strong>CFMMOD</strong> CFMM with $a=1$</li>
+							</ul>
+						</li>
 						<li><strong>HR-NMF</strong> High Resolution NMF model</li>
-						<li><strong>MOD</strong> CP on modulation spectrograms <a href="#">Barker 2013</a></li>
-						<li><strong>CFMM</strong> Common Fate Magnitude Model</li>
-						<li><strong>CFMMOD</strong> CFMM with $a=1$</li>
 					</ul>
 				</section>
 				<section>
