@@ -1,7 +1,5 @@
-import commonfate
 import pylab as plt
 import numpy as np
-np.random.seed(80)
 import itertools
 import soundfile as sf
 import argparse
@@ -9,6 +7,8 @@ import yaml
 import seaborn as sns
 import matplotlib as mpl
 import scipy.signal
+import commonfate
+np.random.seed(80)
 
 
 def displaySTFT(X, name=None, limit=None):

@@ -66,11 +66,47 @@
 						<img src="images/unison.svg" alt="" />
 					</p>
 				</section>
+				<section data-background="#ED8C01">
+					<h1 style='color:white; font-size: 2.4em'>Common Fate Transform</h1>
+				</section>
+				<section>
+					<h2>Common Fate Theory</h2>
+					<ul>
+						<li><a href="#">Bregman in 1994</a> used term "Common Fate" in auditory scene analysis.</li>
+						<li>He describes <b>common fate</b> as the ability to group sound objects based on their common motion over time</li>
+						<li>Humans ability to detect and group sound sources by small differences in the FM and AM modulation is outstanding</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Common Fate Transform</h2>
+					<ul>
+						<li>STFT transforms signal into $X(\omega, \tau) \in \mathbb{C}$</li>
+						<li>$X$ is split into overlapping rectangular $(N_a \times N_b)$ patches</li>
+						<li>Compute complex 2D-DFT of each patch</li>
+						<li>This yields an 4D-Tensor $(N_a, N_b, N_f, N_t)$</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Compared to modulation spectrograms... </h2>
+					<ul>
+						<li>CFT is computed using complex STFT X
+							<ul>
+								<li>Easily invertible</li>
+								<li>Models phase dependencies between neighbouring STFT entries</li>
+							</ul>
+						</li>
+						<li>Patches span/merge several frequency bins</li>
+						<li>Results in <strong>modulation texture</strong></li>
+					</ul>
+				</section>
 				<section>
 					<h2>Common Fate Transform</h2>
 					<p>
-						<img src="images/gridplot.svg" alt="" width="100%" class='center'>
+						<img class="stretch" width="70%" src="images/gridplot.svg">
 					</p>
+				</section>
+				<section data-background="#ED8C01">
+					<h1 style='color:white; font-size: 2.4em'>Common Fate Model</h1>
 				</section>
 				<section>
 					<h2>NMF</h2>
@@ -126,6 +162,9 @@
 					</ul>
 					</small>
 				</section>
+				<section data-background="#ED8C01">
+					<h1 style='color:white; font-size: 2.4em'>Evaluation</h1>
+				</section>
 				<section>
 					<h2>Evaluation Results</h2>
 					<img src="images/boxplot.svg" width="100%" alt="" />
@@ -135,14 +174,14 @@
 					<img src="images/iterations.svg" width="100%" alt="" />
 				</section>
 				<section>
-					<h2>Open Source Implementation</h2>
-					<pre><code data-trim data-noescape class="bash">
+					<h2>Open Source Python Implementation</h2>
+					<pre style="font-size:34px; width:50%!important"><code data-trim data-noescape>
 						pip install commonfate
 					</code></pre>
-
-					<pre><code data-trim data-noescape class="python">
-						np.einsum('abfj,tj->abft', A, H)
-					</code></pre>
+					<p class="center">
+						or clone on github:
+						<a href="https://github.com/aliutkus/commonfate">https://github.com/aliutkus/commonfate</a>
+					</p>
 				</section>
 			<div class='footer'>
 				<div id="copyright">&#9400; AudioLabs, 2016</div>
@@ -165,9 +204,10 @@
 				history: true,
 				center: true,
 				slideNumber: true,
-				// Bounds for smallest/largest possible scale to apply to content
-    		minScale: 0.2,
-    		maxScale: 5,
+				width: 1280,
+				height: 720,
+    			minScale: 0.2,
+    			maxScale: 5,
 				transition: 'none', // none/fade/slide/convex/concave/zoom
 
 				// Optional reveal.js plugins

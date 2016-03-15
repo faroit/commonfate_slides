@@ -19,7 +19,7 @@ body {
 
 .reveal {
   font-family: "Fira Sans", sans-serif;
-  font-size: 38px;
+  font-size: 32px;
   font-weight: normal;
   color: #222; }
 
@@ -311,7 +311,7 @@ body {
   position: absolute;
   bottom: 0px;
   padding: 1em;
-  font-size: 0.4em;
+  font-size: 0.5em;
   line-height: 1.3em; }
 
 .reveal .footer img {
