@@ -89,16 +89,9 @@
 				</section>
 				<section>
 					<h2>Common Fate Transform</h2>
-					<ul>
-						<li>STFT transforms signal into $X(\omega, \tau) \in \mathbb{C}$</li>
-						<li>$X$ is split into overlapping rectangular $(N_a \times N_b)$ patches</li>
-						<li>Compute complex 2D-DFT of each patch</li>
-						<li>Yields in an 4D-Tensor $\mathbf{V}^{N_a \times N_b \times N_f \times N_t}$</li>
-						<li>$a \rightarrow$ modulation texture (spaning frequency bins) </li>
-						<li>$b \rightarrow$ modulation texture (spaning time frames)</li>
-						<li>$f \rightarrow$ frequency index of modulation texture on t-f plane	</li>
-						<li>$t \rightarrow$ time index of modulation texture on t-f plane	</li>
-					</ul>
+					<p>
+						<img src="images/cft_blocks.svg" alt="" />
+					</p>
 				</section>
 				<section>
 					<h2>Common Fate Transform</h2>
