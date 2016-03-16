@@ -13,3 +13,6 @@ images/boxplot.svg:
 
 images/iterations.svg:
 	python data/make_sdriteration.py data/all.pickle $@
+
+images/patches:
+	python data/render_patches.py data/fm_sine.wav
