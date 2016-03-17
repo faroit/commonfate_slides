@@ -96,13 +96,22 @@
 				<section data-background="#ED8C01">
 					<h1 style='color:white; font-size: 2.4em'>Common Fate Transform</h1>
 				</section>
+				<section data-background="images/flock.jpg">
+					<aside class="notes">
+						Gestalt Theory,
+						Let us imagine a large number of birds in flight. From
+					</aside>
+				</section>
 				<section>
-					<h2>"Common Fate"</h2>
+					<h2>Common Fate in Audio</h2>
 					<ul>
 						<li><a href="#">Bregman in 1994</a> used term "Common Fate" in auditory scene analysis.</li>
-						<li>He describes <b>common fate</b> as the ability to group sound objects based on their common motion over time</li>
+						<li>Ability to group sound objects based on their common motion over time</li>
 						<li>Humans ability to detect and group sound sources by small differences in the FM and AM modulation is outstanding</li>
 					</ul>
+					<p style="background-color: orange; padding: 10px; color:white">
+						<strong>Proposed:</strong> Transformation which groups common modulation texture
+					</p>
 				</section>
 				<section>
 					<h2>Common Fate Transform</h2>
@@ -316,12 +325,6 @@
 		<script src="lib/js/wavesurfer.min.js"></script>
 
 		<script>
-		var wavesurfer = WaveSurfer.create({
-			container: '#waveform',
-			waveColor: 'grey',
-			progressColor: 'orange'
-		});
-		wavesurfer.load('data/fm_sine.wav');
 			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
@@ -346,7 +349,12 @@
 					{ src: 'plugin/math/math.js', async: true }
 				]
 			});
-
+			var wavesurfer = WaveSurfer.create({
+				container: '#waveform',
+				waveColor: 'grey',
+				progressColor: 'orange'
+			});
+			wavesurfer.load('data/fm_sine.wav');
 		</script>
 		<script src="lib/js/jquery.min.js"></script>
 		<script type="text/javascript" src="lib/js/player.js"></script>
