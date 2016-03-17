@@ -197,6 +197,8 @@ def process(
     mhop = (pref['mhop_A'], pref['mhop_B'])
 
     print 'computing STFT'
+    print signal.shape
+
     xstft = commonfate.transform.forward(xwave, pref['nfft'], pref['thop'])
     print xstft.shape
 

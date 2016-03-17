@@ -61,6 +61,12 @@
 					<p>
 						<img src="images/non_unison.svg" alt="" />
 					</p>
+					<aside class="notes">
+						<ul>
+							<li>Can be extended to $n$-dimensions</li>
+							<li></li>
+						</ul>
+					</aside>
 				</section>
 				<section>
 					<h2>Unison Scenario</h2>
@@ -106,15 +112,21 @@
 				</section>
 				<section>
 					<h2>Audio</h2>
-					<p>
-						<img class="stretch" width="90%" src="images/wavform.svg">
-					</p>
+						<div id="waveform"></div>
+						<button class="btn btn-primary" onclick="wavesurfer.playPause()">
+    				<i class="glyphicon glyphicon-play"></i>
+    				Play
+  					</button>
+						<p style="text-align:center">
+							$x \in \mathbb{R}^{72000}$
+						</p>
 				</section>
 				<section>
 					<h2>STFT</h2>
-					<p>
-						<img class="stretch" width="90%" src="images/stft.png">
-					</p>
+						<img style="margin-left:140px" width="60%" src="images/stft.png">
+						<p style="text-align:center">
+							$\mathbf{X} \in \mathbb{C}^{352 \times 279}$
+						</p>
 				</section>
 				<section>
 					<h2>Common Fate Transform</h2>
@@ -125,11 +137,17 @@
 								<p style="text-align:center">
 									STFT Grid
 								</p>
+								<p style="text-align:center">
+									$\mathcal{G} \in \mathbb{C}^{32 \times 48 \times 11 \times 6}$
+								</p>
 							</td>
 							<td>
 								<img src="images/cft.png" width="100%" alt="" />
 								<p style="text-align:center">
 									CFT
+								</p>
+								<p style="text-align:center">
+									$\mathcal{V} \in \mathbb{C}^{32 \times 48 \times 11 \times 6}$
 								</p>
 							</td>
 						</tr>
@@ -139,9 +157,7 @@
 				</section>
 				<section>
 					<h2>In Detail</h2>
-					<p>
-						<img class="stretch" width="90%" src="images/gridplot.svg">
-					</p>
+						<img class="stretch" src="images/gridplot.svg">
 				</section>
 				<section>
 					<h2>Compared to modulation spectrograms... </h2>
@@ -301,9 +317,15 @@
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
+		<script src="lib/js/wavesurfer.min.js"></script>
 
 		<script>
-
+		var wavesurfer = WaveSurfer.create({
+			container: '#waveform',
+			waveColor: 'grey',
+			progressColor: 'orange'
+		});
+		wavesurfer.load('data/fm_sine.wav');
 			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
@@ -312,7 +334,7 @@
 				history: true,
 				center: true,
 				slideNumber: true,
-    		minScale: 0.2,
+    		minScale: 0.1,
     		maxScale: 5,
 				transition: 'none', // none/fade/slide/convex/concave/zoom
 				math: {config: 'TeX-AMS_SVG-full'},
@@ -330,9 +352,8 @@
 			});
 
 		</script>
-		<script   src="https://code.jquery.com/jquery-2.2.1.min.js"   integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="   crossorigin="anonymous"></script>
-
-		<script type="text/javascript" src="http://www.audiolabs-erlangen.de/assets/multitrack/player.js"></script>
+		<script src="lib/js/jquery.min.js"></script>
+		<script type="text/javascript" src="lib/js/player.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
 				var settings = {
