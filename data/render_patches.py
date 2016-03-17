@@ -64,6 +64,9 @@ def displaySTFT(X, name=None, limit=None):
         vmax=20,
         cmap='cubehelix_r',
     )
+    plt.xlabel('Time')
+    plt.ylabel('Frequency bins')
+
     if limit is not None:
         plt.axis(limit)
 
@@ -73,7 +76,7 @@ def displaySTFT(X, name=None, limit=None):
         plt.savefig(name, bbox_inches='tight', dpi=300)
 
 
-def displayMSTFT(Z, name=None, tricks=False):
+def displayMSTFT(Z, name=None, tricks=False, gft=False):
     plt.rc('text', usetex=True)
     plt.rc('font', family='FiraSans')
 
@@ -120,16 +123,25 @@ def displayMSTFT(Z, name=None, tricks=False):
     plt.rcParams.update(params)
     # display a modulation spectrogram, of shape (w1,w2,f,t)
     plt.figure(1)
+
     (nF, nT) = Z.shape[2:4]
     f, ax = plt.subplots(nF, nT)
     for (f, t) in itertools.product(range(nF), range(nT)):
         # plt.subplot(nF, nT, (nF-f-1) * nT+t+1)
-        ax[f, t].pcolormesh(
-            np.flipud(abs(Z[..., nF - f - 1, t])) ** 0.3,
-            vmin=0,
-            vmax=10,
-            cmap='cubehelix_r',
-        )
+        if gft:
+            ax[f, t].pcolormesh(
+                np.flipud(abs(Z[..., nF - f - 1, t])),
+                vmin=0,
+                vmax=10,
+                cmap='cubehelix_r',
+            )
+        else:
+            ax[f, t].pcolormesh(
+                np.flipud(abs(Z[..., nF - f - 1, t])) ** 0.3,
+                vmin=0,
+                vmax=10,
+                cmap='cubehelix_r',
+            )
 
         ax[f, t].set_xticks([])
         ax[f, t].set_xlabel('')
@@ -137,7 +149,7 @@ def displayMSTFT(Z, name=None, tricks=False):
         ax[f, t].set_ylabel('')
 
         if tricks:
-            ax[f, t].axis((0, 48, 4, 28))
+            ax[f, t].axis((0, 48, 5, 32))
 
             if f == 0 and t == nT - 1:
                 ax[f, t].yaxis.tick_right()
@@ -163,7 +175,7 @@ def displayMSTFT(Z, name=None, tricks=False):
                 )
 
     f = plt.gcf()
-    f.subplots_adjust(wspace=0, hspace=0)
+    f.subplots_adjust(wspace=0.3, hspace=0.3)
 
     if name is None:
         plt.show()
@@ -194,6 +206,7 @@ def process(
     # compute modulation STFT
     print 'computing modulation STFT'
     x = commonfate.transform.forward(xstft, W, mhop, real=False)
+    g = commonfate.transform.split(xstft, W, mhop, False)
 
     print 'getting modulation spectrogram, shape:', x.shape
     z = np.abs(x) ** pref['alpha']
@@ -239,6 +252,7 @@ def process(
         displaySTFT(stf_k[0], 'images/stft_k0.png', (0, 279, 0, 352))
         displaySTFT(stf_k[1], 'images/stft_k1.png', (0, 279, 0, 352))
         displayMSTFT(z[..., 0], 'images/cft.png', tricks=True)
+        displayMSTFT(g[..., 0], 'images/gft.png', tricks=True, gft=True)
         displayMSTFT(z_k[0][..., 0], 'images/cft_k0.png', tricks=True)
         displayMSTFT(z_k[1][..., 0], 'images/cft_k1.png', tricks=True)
         displayMSTFT(P, 'images/P.png', tricks=False)

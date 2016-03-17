@@ -69,11 +69,14 @@
 					</p>
 				</section>
 				<section>
-					<h2>Common Fate Theory</h2>
+					<h2>Wanted</h2>
 					<ul>
-						<li><a href="#">Bregman in 1994</a> used term "Common Fate" in auditory scene analysis.</li>
-						<li>He describes <b>common fate</b> as the ability to group sound objects based on their common motion over time</li>
-						<li>Humans ability to detect and group sound sources by small differences in the FM and AM modulation is outstanding</li>
+						<li>Signal representation which exploits
+							<li>Amplitude Modulations</li>
+							<li>Frequency Modulations</li>
+							<li>Phase Modulations</li>
+						</li>
+						<li>Easily invertible</li>
 					</ul>
 				</section>
 				<section>
@@ -88,9 +91,29 @@
 					<h1 style='color:white; font-size: 2.4em'>Common Fate Transform</h1>
 				</section>
 				<section>
+					<h2>"Common Fate"</h2>
+					<ul>
+						<li><a href="#">Bregman in 1994</a> used term "Common Fate" in auditory scene analysis.</li>
+						<li>He describes <b>common fate</b> as the ability to group sound objects based on their common motion over time</li>
+						<li>Humans ability to detect and group sound sources by small differences in the FM and AM modulation is outstanding</li>
+					</ul>
+				</section>
+				<section>
 					<h2>Common Fate Transform</h2>
 					<p>
 						<img src="images/cft_blocks.svg" alt="" />
+					</p>
+				</section>
+				<section>
+					<h2>Audio</h2>
+					<p>
+						<img class="stretch" width="90%" src="images/wavform.svg">
+					</p>
+				</section>
+				<section>
+					<h2>STFT</h2>
+					<p>
+						<img class="stretch" width="90%" src="images/stft.png">
 					</p>
 				</section>
 				<section>
@@ -98,10 +121,16 @@
 					<table>
 						<tr>
 							<td>
-								<img src="images/stft.png" alt="" />
+								<img src="images/gft.png" width="100%" alt="" />
+								<p style="text-align:center">
+									STFT Grid
+								</p>
 							</td>
 							<td>
-								<img src="images/cft.png" alt="" />
+								<img src="images/cft.png" width="100%" alt="" />
+								<p style="text-align:center">
+									CFT
+								</p>
 							</td>
 						</tr>
 					</table>
@@ -114,7 +143,6 @@
 						<img class="stretch" width="90%" src="images/gridplot.svg">
 					</p>
 				</section>
-
 				<section>
 					<h2>Compared to modulation spectrograms... </h2>
 					<ul>
@@ -158,14 +186,14 @@
 					<section>
 						<h2>Common Fate Model</h2>
 						<p>
-							<img src="images/cfm_unfolded.svg" width="100%" alt="" />
+							<img src="images/cfm.svg" width="100%" alt="" />
 								$$\sum\limits_{j=1}^{J} \mathbf{P}_{j}(a,b,f) \circ \mathbf{h}_{j}(t)$$
 						</p>
 					</section>
 					<section>
 						<h2>Common Fate Model</h2>
 						<p>
-							<img src="images/cfm.svg" width="100%" alt="" />
+							<img src="images/cfm_unfolded.svg" width="100%" alt="" />
 								$$\sum\limits_{j=1}^{J} \mathbf{P}_{j}(a,b,f) \circ \mathbf{h}_{j}(t)$$
 						</p>
 					</section>
@@ -174,6 +202,7 @@
 					<h2>Signal Separation</h2>
 					<ol>
 						<li>Compute the CFT from audio signal to get tensor $\mathbf{V}$</li>
+						<li>Take the magnitude $|\mathbf{V}|$</li>
 						<li>Initialise $\mathbf{P}$ and $\mathbf{h}$ with random non-negative values</li>
 						<li>Apply multiplicative update rule to minimize $\beta$-divergence</strong></li>
 						<li>Synthesise factorised components using Wiener filtering</strong></li>
