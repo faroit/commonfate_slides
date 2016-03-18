@@ -90,9 +90,9 @@
 				<section>
 					<h2>Related Work</h2>
 					<ul>
-						<li>Frequency- dependent activation matrices by using a source/filter-based model (<a href="#">Hennequin et. al. 2011</a>)</li>
-						<li>HR-NMF models each complex entry of a time-frequency as a linear combination of its neighbours (<a href="#">Badeau et. al. 2011</a>)</li>
-						<li>Exploiting AM by computing a modulation spectrogram and factorise using NTF (<a href="#">Barker et. al. 2013</a>)</li>
+						<li>Frequency-dependent activation matrices by using a source/filter-based model (<a href="#">Hennequin 2011</a>)</li>
+						<li>HR-NMF models each complex entry of a time-frequency as a linear combination of its neighbours (<a href="#">Badeau 2011</a>)</li>
+						<li>Exploiting AM by computing a modulation spectrogram and factorise using NTF (<a href="#">Barker 2013</a>)</li>
 					</ul>
 				</section>
 				<section data-background="#ED8C01">
@@ -188,22 +188,13 @@
 					</p>
 				</section>
 				<section>
-					<h2>CPD/PARAFAC/NTF</h2>
-					<!-- <ul>
-						<li>Take the “outer-product” of corresponding columns from each factor matrix to form a simple (rank-1) tensor</li>
-					</ul> -->
-					<p>
-						<img src="images/cpd.svg" width="100%" alt="" />
-						$$\sum\limits_{j=1}^{J} \mathbf{w}_{j}(f) \circ \mathbf{m}_{j}(b) \circ \mathbf{h}_{j}(t)$$
-					</p>
-					<aside class="notes">
-	 					<ul>
-	 						<li>Can be extended to $n$-dimensions</li>
-							$\sum\limits_{j=1}^{J} \mathbf{w}_{j}(f) \circ \mathbf{m}_{j}(b) \circ \mathbf{h}_{j}(t) \circ \mathbf{q}_{j}(t)$
-	 					</ul>
- 					</aside>
-				</section>
-				<section>
+					<section>
+						<h2>Common Fate Model</h2>
+						<p>
+							<img src="images/cfm_unfolded.svg" width="100%" alt="" />
+								$$\sum\limits_{j=1}^{J} \mathbf{P}_{j}(a,b,f) \circ \mathbf{h}_{j}(t)$$
+						</p>
+					</section>
 					<section>
 						<h2>Common Fate Model</h2>
 						<p>
@@ -212,11 +203,20 @@
 						</p>
 					</section>
 					<section>
-						<h2>Common Fate Model</h2>
+						<h2>CPD/PARAFAC/NTF</h2>
+						<!-- <ul>
+							<li>Take the “outer-product” of corresponding columns from each factor matrix to form a simple (rank-1) tensor</li>
+						</ul> -->
 						<p>
-							<img src="images/cfm_unfolded.svg" width="100%" alt="" />
-								$$\sum\limits_{j=1}^{J} \mathbf{P}_{j}(a,b,f) \circ \mathbf{h}_{j}(t)$$
+							<img src="images/cpd.svg" width="100%" alt="" />
+							$$\sum\limits_{j=1}^{J} \mathbf{w}_{j}(f) \circ \mathbf{m}_{j}(b) \circ \mathbf{h}_{j}(t)$$
 						</p>
+						<aside class="notes">
+							<ul>
+								<li>Can be extended to $n$-dimensions</li>
+								$\sum\limits_{j=1}^{J} \mathbf{w}_{j}(f) \circ \mathbf{m}_{j}(b) \circ \mathbf{h}_{j}(t) \circ \mathbf{q}_{j}(t)$
+							</ul>
+						</aside>
 					</section>
 				</section>
 				<section>
@@ -274,7 +274,7 @@
 					<h2>Models</h2>
 					<ul style="font-size: 28px">
 						<li><strong>NMF</strong> Non-Negative Matrix Factorization</li>
-						<li><strong>MOD</strong> CPD on modulation spectrograms <a href="#">Barker 2013</a></li>
+						<li><strong>MOD</strong> CP on modulation spectrogram</li>
 						<li><strong>CFM</strong> Common Fate Model
 							<ul>
 								<li><strong>CFMM</strong> Common Fate Magnitude Model</li>
