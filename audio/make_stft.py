@@ -19,14 +19,15 @@ if __name__ == '__main__':
         audio, rate = sf.read(in_file)
 
         D = librosa.stft(audio)
-        fig, ax = plt.subplots(1, 1, figsize=(10, 3))
+        fig, ax = plt.subplots(1, 1, figsize=(10, 4))
 
         librosa.display.specshow(
             librosa.logamplitude(
-                np.abs(D)**2,
+                np.abs(D[:300, :])**2,
                 ref_power=np.max
             ),
-            y_axis='linear', x_axis='time'
+            y_axis='linear', x_axis='time',
+            cmap='Greys'
         )
 
         plt.xticks([])

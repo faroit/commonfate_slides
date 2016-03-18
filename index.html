@@ -14,10 +14,10 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link href='https://fonts.googleapis.com/css?family=Fira+Sans' rel='stylesheet' type='text/css'>
+		<link href='lib/font/fira/fira-sans.css' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/alabs.css" id="theme">
-		<link type="text/css" rel="stylesheet" rev="stylesheet" media="screen" href="http://www.audiolabs-erlangen.de/assets/multitrack/screen.css" />
+		<link type="text/css" rel="stylesheet" rev="stylesheet" media="screen" href="lib/css/multitrack.css" />
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/github.css">
@@ -77,10 +77,12 @@
 				<section>
 					<h2>Wanted</h2>
 					<ul>
-						<li>Signal representation which exploits
-							<li>Amplitude Modulations</li>
-							<li>Frequency Modulations</li>
-							<li>Phase Modulations</li>
+						<li>Signal representation which exploits modulations of
+							<ul>
+								<li>Amplitude</li>
+								<li>Frequency</li>
+								<li>Phase</li>
+							</ul>
 						</li>
 						<li>Easily invertible</li>
 					</ul>
@@ -115,9 +117,7 @@
 				</section>
 				<section>
 					<h2>Common Fate Transform</h2>
-					<p>
-						<img src="images/cft_blocks.svg" alt="" />
-					</p>
+						<img src="images/cft_blocks.svg" width="100%" alt="" />
 				</section>
 				<section>
 					<h2>Audio</h2>
@@ -333,10 +333,13 @@
 				history: true,
 				center: true,
 				slideNumber: true,
-    		minScale: 0.1,
-    		maxScale: 5,
+    			minScale: 0.1,
+    			maxScale: 5,
 				transition: 'none', // none/fade/slide/convex/concave/zoom
-				math: {config: 'TeX-AMS_SVG-full'},
+				math: {
+					mathjax: 'node_modules/mathjax/MathJax.js',
+					config: 'TeX-AMS_SVG-full',
+				},
 
 				// Optional reveal.js plugins
 				dependencies: [
