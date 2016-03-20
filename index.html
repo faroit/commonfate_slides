@@ -38,9 +38,13 @@
 	<body>
 
 		<div class="reveal">
-
-			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class='footer'>
+				<div id="copyright">&#9400; AudioLabs, 2016</div>
+				<div id="middlebox">Common Fate Model for Unison Source Separation </div>
+				<img src="css/theme/alabs/alabs_logo.svg" alt="Logo" />
+			</div>
 			<div class="slides">
+				<!-- ----------------------------------------------------------------------------------------- -->
 				<section class="cover" data-background="css/theme/alabs/alabs_header.jpg" data-background-repeat="no-repeat" data-background-size="100%" data-background-position="0 0"  data-state="no-title-footer no-progressbar">
 					<h2>Common Fate Model for Unison Source Separation</h2>
 					<p>
@@ -58,6 +62,7 @@
 					</div>
 
 				</section>
+				<!-- ----------------------------------------------------------------------------------------- -->
 				<section>
 					<h2>Common Source Separation Scenario</h2>
 					<p>
@@ -70,12 +75,14 @@
 						</ul>
 					</aside>
 				</section>
+				<!-- ----------------------------------------------------------------------------------------- -->
 				<section>
 					<h2>Unison Scenario</h2>
 					<p>
 						<img src="images/unison.svg" alt="" />
 					</p>
 				</section>
+				<!-- ----------------------------------------------------------------------------------------- -->
 				<section>
 					<h2>Wanted</h2>
 					<ul>
@@ -89,6 +96,7 @@
 						<li>Easily invertible</li>
 					</ul>
 				</section>
+				<!-- ----------------------------------------------------------------------------------------- -->
 				<section>
 					<h2>Related Work</h2>
 					<ul>
@@ -97,15 +105,18 @@
 						<li>Exploiting AM by computing a modulation spectrogram and factorise using NTF (<a href="#">Barker 2013</a>)</li>
 					</ul>
 				</section>
+				<!-- ----------------------------------------------------------------------------------------- -->
 				<section data-background="#ED8C01" data-state="no-title-footer">
 					<h1 style='color:white; font-size: 2.4em'>Common Fate Transform</h1>
 				</section>
+				<!-- ----------------------------------------------------------------------------------------- -->
 				<section data-background="images/flock.jpg" data-state="no-title-footer">
 					<aside class="notes">
 						Gestalt Theory,
 						Let us imagine a large number of birds in flight. From
 					</aside>
 				</section>
+				<!-- ----------------------------------------------------------------------------------------- -->
 				<section>
 					<h2>Common Fate in Audio</h2>
 					<ul>
@@ -117,10 +128,12 @@
 						<strong>Proposed:</strong> Transformation which groups common modulation texture
 					</p>
 				</section>
+				<!-- ----------------------------------------------------------------------------------------- -->
 				<section>
 					<h2>Common Fate Transform</h2>
 						<img src="images/cft_blocks.svg" width="100%" alt="" />
 				</section>
+				<!-- ----------------------------------------------------------------------------------------- -->
 				<section>
 					<h2>Audio</h2>
 						<div id="waveform"></div>
@@ -128,6 +141,7 @@
 							$x \in \mathbb{R}^{72000}$
 						</p>
 				</section>
+				<!-- ----------------------------------------------------------------------------------------- -->
 				<section>
 					<h2>STFT</h2>
 						<img style="margin-left:140px" width="60%" src="images/stft.png">
@@ -135,6 +149,7 @@
 							$\mathbf{X} \in \mathbb{C}^{352 \times 279}$
 						</p>
 				</section>
+				<!-- ----------------------------------------------------------------------------------------- -->
 				<section>
 					<h2>Common Fate Transform</h2>
 					<table>
@@ -162,10 +177,12 @@
 					<p>
 					</p>
 				</section>
+				<!-- ----------------------------------------------------------------------------------------- -->
 				<section>
 					<h2>In Detail</h2>
 						<img class="stretch" src="images/gridplot.svg">
 				</section>
+				<!-- ----------------------------------------------------------------------------------------- -->
 				<section>
 					<h2>Compared to modulation spectrograms... </h2>
 					<ul>
@@ -179,9 +196,11 @@
 						<li>Results in <strong>modulation texture</strong></li>
 					</ul>
 				</section>
+				<!-- ----------------------------------------------------------------------------------------- -->
 				<section data-background="#ED8C01" data-state="no-title-footer">
 					<h1 style='color:white; font-size: 2.4em'>Common Fate Model</h1>
 				</section>
+				<!-- ----------------------------------------------------------------------------------------- -->
 				<section>
 					<h2>NMF</h2>
 					<p>
@@ -189,7 +208,9 @@
 						$$\sum\limits_{j=1}^{J} \mathbf{w}_{j}(f) \circ  \mathbf{h}_{j}(t) $$
 					</p>
 				</section>
+				<!-- ----------------------------------------------------------------------------------------- -->
 				<section>
+					<!-- ----------------------------------------------------------------------------------------- -->
 					<section>
 						<h2>Common Fate Model</h2>
 						<p>
@@ -197,6 +218,7 @@
 								$$\sum\limits_{j=1}^{J} \mathbf{P}_{j}(a,b,f) \circ \mathbf{h}_{j}(t)$$
 						</p>
 					</section>
+					<!-- ----------------------------------------------------------------------------------------- -->
 					<section>
 						<h2>Common Fate Model</h2>
 						<p>
@@ -204,6 +226,7 @@
 								$$\sum\limits_{j=1}^{J} \mathbf{P}_{j}(a,b,f) \circ \mathbf{h}_{j}(t)$$
 						</p>
 					</section>
+					<!-- ----------------------------------------------------------------------------------------- -->
 					<section>
 						<h2>CPD/PARAFAC/NTF</h2>
 						<!-- <ul>
@@ -220,7 +243,9 @@
 							</ul>
 						</aside>
 					</section>
+					<!-- ----------------------------------------------------------------------------------------- -->
 				</section>
+				<!-- ----------------------------------------------------------------------------------------- -->
 				<section>
 					<h2>Signal Separation</h2>
 					<ol>
@@ -232,9 +257,11 @@
 						<li>Inverse CFT</strong></li>
 					</ol>
 				</section>
+				<!-- ----------------------------------------------------------------------------------------- -->
 				<section data-state="no-title-footer" data-background="#ED8C01">
 					<h1 style='color:white; font-size: 2.4em'>Evaluation</h1>
 				</section>
+				<!-- ----------------------------------------------------------------------------------------- -->
 				<!-- <section>
 					<h2>Parameters</h2>
 						<ul>
@@ -245,6 +272,7 @@
 
 						</ul>
 				</section> -->
+				<!-- ----------------------------------------------------------------------------------------- -->
 
 				<section>
 					<h2>Dataset</h2>
@@ -263,6 +291,7 @@
 						<li>Data were encoded in 44.1 kHz / 16 bit.</li>
 					</ul>
 				</section>
+				<!-- ----------------------------------------------------------------------------------------- -->
 
 				<!-- <section>
 					<h2>Comparison</h2>
@@ -272,6 +301,7 @@
 						<li>For j > 2 we used oracle clustering by SDR</li>
 					</ul>
 				</section> -->
+				<!-- ----------------------------------------------------------------------------------------- -->
 				<section>
 					<h2>Models</h2>
 					<ul style="font-size: 28px">
@@ -286,26 +316,22 @@
 						<li><strong>HR-NMF</strong> High Resolution NMF model</li>
 					</ul>
 				</section>
+				<!-- ----------------------------------------------------------------------------------------- -->
 				<section>
 					<h2>Evaluation Results</h2>
 					<img src="images/boxplot.svg" width="100%" alt="" />
 				</section>
+				<!-- ----------------------------------------------------------------------------------------- -->
 				<section>
 					<h2>Number of Components</h2>
 					<img src="images/iterations.svg" width="100%" alt="" />
 				</section>
+				<!-- ----------------------------------------------------------------------------------------- -->
 				<section>
 				    <h2>Demo</h2>
 						<iframe src="audio/index.html" class="stretch"></iframe>
 				</section>
-				<section>
-					<h2>Open Source Python Implementation</h2>
-					<em>> pip install commonfate</em>
-					<p class="center">
-						or clone on github:
-						<a href="https://github.com/aliutkus/commonfate">https://github.com/aliutkus/commonfate</a>
-					</p>
-				</section>
+				<!-- ----------------------------------------------------------------------------------------- -->
 				<section>
 					<h2>Conclusion</h2>
 					<ul>
@@ -313,47 +339,36 @@
 						<li><strong>CFM</strong> derived from the idea of humans perceiving common modulation over time as one source.</li>
 						<li>Our results on unisonous musical instruments indicate that this method can perform well for this scenario. </li>
 					</ul>
-				</section>
-			<div class='footer'>
-				<div id="copyright">&#9400; AudioLabs, 2016</div>
-				<div id="middlebox">Common Fate Model for Unison Source Separation </div>
-				<img src="css/theme/alabs/alabs_logo.svg" alt="Logo" />
-			</div>
 
+					<table>
+						<tr>
+							<td>
+								These slides
+							</td>
+							<td>
+								<a href="faroit.github.io/commonfate_icassp16/">faroit.github.io/commonfate_icassp16</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Open Source Python Implementation
+							</td>
+							<td>
+								<a href="github.com/aliutkus/commonfate">github.com/aliutkus/commonfate</a>
+							</td>
+						</tr>
+					</table>
+				</section>
+				<!-- ----------------------------------------------------------------------------------------- -->
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 		<script src="lib/js/wavesurfer.min.js"></script>
+		<script src="reveal-settings.js">
 
+		</script>
 		<script>
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: false,
-				progress: true,
-				history: true,
-				center: true,
-				slideNumber: true,
-    			minScale: 0.1,
-    			maxScale: 5,
-				transition: 'none', // none/fade/slide/convex/concave/zoom
-				math: {
-					mathjax: 'node_modules/mathjax/MathJax.js',
-					config: 'TeX-AMS_SVG-full',
-				},
-
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/math/math.js', async: true }
-				]
-			});
 			var wavesurfer = WaveSurfer.create({
 				container: '#waveform',
 				waveColor: 'grey',
