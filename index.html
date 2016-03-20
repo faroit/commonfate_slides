@@ -50,10 +50,12 @@
 					March 21, 2016
 					</p>
 					<p>
-					<img src="css/theme/alabs/FAU_bw.svg" id="FAU" class="logo" alt="">
-					<img src="css/theme/alabs/IIS_bw.svg" id="IIS" class="logo" alt="">
-					<img src="images/logo_INRIA.png" class="logo" id="INRIA" alt="">
-					<img src="images/telecom.png" id="telecom" class="logo" alt="">
+					<div class='logos'>
+						<img src="css/theme/alabs/FAU_bw.svg" id="FAU" class="logo" alt="">
+						<img src="css/theme/alabs/IIS_bw.svg" id="IIS" class="logo" alt="">
+						<img src="images/logo_INRIA.png" class="logo" id="INRIA" alt="">
+						<img src="images/telecom.png" id="telecom" class="logo" alt="">
+					</div>
 
 				</section>
 				<section>
@@ -95,10 +97,10 @@
 						<li>Exploiting AM by computing a modulation spectrogram and factorise using NTF (<a href="#">Barker 2013</a>)</li>
 					</ul>
 				</section>
-				<section data-background="#ED8C01">
+				<section data-background="#ED8C01" data-state="no-title-footer">
 					<h1 style='color:white; font-size: 2.4em'>Common Fate Transform</h1>
 				</section>
-				<section data-background="images/flock.jpg">
+				<section data-background="images/flock.jpg" data-state="no-title-footer">
 					<aside class="notes">
 						Gestalt Theory,
 						Let us imagine a large number of birds in flight. From
@@ -177,7 +179,7 @@
 						<li>Results in <strong>modulation texture</strong></li>
 					</ul>
 				</section>
-				<section data-background="#ED8C01">
+				<section data-background="#ED8C01" data-state="no-title-footer">
 					<h1 style='color:white; font-size: 2.4em'>Common Fate Model</h1>
 				</section>
 				<section>
@@ -230,7 +232,7 @@
 						<li>Inverse CFT</strong></li>
 					</ol>
 				</section>
-				<section data-background="#ED8C01">
+				<section data-state="no-title-footer" data-background="#ED8C01">
 					<h1 style='color:white; font-size: 2.4em'>Evaluation</h1>
 				</section>
 				<!-- <section>
@@ -337,7 +339,7 @@
     			maxScale: 5,
 				transition: 'none', // none/fade/slide/convex/concave/zoom
 				math: {
-					// mathjax: 'node_modules/mathjax/MathJax.js',
+					mathjax: 'node_modules/mathjax/MathJax.js',
 					config: 'TeX-AMS_SVG-full',
 				},
 

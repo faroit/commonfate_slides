@@ -149,6 +149,10 @@ body {
     padding-top: 4em !important;
 }
 
+.reveal .cover h1, h2 {
+    margin-top: 2em;
+}
+
 .reveal .cover img {
     border: none;
     box-shadow: none;
@@ -157,8 +161,12 @@ body {
     margin-left: 1em;
 }
 
-.reveal .cover .logo {
+.reveal .cover .logos {
     margin-left: 1em;
+    position: absolute;
+    left: 0em;
+    bottom: -5em;
+    height: 40%;
 }
 
 .reveal section img {

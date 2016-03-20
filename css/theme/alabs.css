@@ -370,6 +370,9 @@ body {
 .reveal .cover {
   padding-top: 4em !important; }
 
+.reveal .cover h1, h2 {
+  margin-top: 2em; }
+
 .reveal .cover img {
   border: none;
   box-shadow: none;
@@ -377,8 +380,12 @@ body {
   height: 1.6em;
   margin-left: 1em; }
 
-.reveal .cover .logo {
-  margin-left: 1em; }
+.reveal .cover .logos {
+  margin-left: 1em;
+  position: absolute;
+  left: 0em;
+  bottom: -5em;
+  height: 40%; }
 
 .reveal section img {
   margin: 0;
