@@ -215,7 +215,7 @@
 						<h2>Common Fate Model</h2>
 						<p>
 							<img src="images/cfm_unfolded.svg" width="100%" alt="" />
-								$$\sum\limits_{j=1}^{J} \mathbf{P}_{j}(a,b,f) \circ \mathbf{h}_{j}(t)$$
+								$$\sum\limits_{j=1}^{J} \mathbf{A}_{j}(a,b,f) \circ \mathbf{h}_{j}(t)$$
 						</p>
 					</section>
 					<!-- ----------------------------------------------------------------------------------------- -->
@@ -223,7 +223,7 @@
 						<h2>Common Fate Model</h2>
 						<p>
 							<img src="images/cfm.svg" width="100%" alt="" />
-								$$\sum\limits_{j=1}^{J} \mathbf{P}_{j}(a,b,f) \circ \mathbf{h}_{j}(t)$$
+								$$\sum\limits_{j=1}^{J} \mathbf{A}_{j}(a,b,f) \circ \mathbf{h}_{j}(t)$$
 						</p>
 					</section>
 					<!-- ----------------------------------------------------------------------------------------- -->
@@ -251,7 +251,7 @@
 					<ol>
 						<li>Compute the CFT from audio signal to get tensor $\mathbf{V}$</li>
 						<li>Take the magnitude $|\mathbf{V}|$</li>
-						<li>Initialise $\mathbf{P}$ and $\mathbf{h}$ with random non-negative values</li>
+						<li>Initialise $\mathbf{A}$ and $\mathbf{h}$ with random non-negative values</li>
 						<li>Apply multiplicative update rule to minimize $\beta$-divergence</strong></li>
 						<li>Synthesise factorised components using Wiener filtering</strong></li>
 						<li>Inverse CFT</strong></li>
