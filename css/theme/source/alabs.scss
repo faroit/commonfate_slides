@@ -62,7 +62,7 @@ body {
 }
 
 .reveal .slides {
-    text-align: left;
+    text-align: center;
 }
 
 .reveal .progress {
@@ -97,6 +97,7 @@ body {
     bottom: 0em;
     width: 30em;
     height: 80%;
+    font-size: 1em;
     text-align: center;
 }
 
@@ -192,4 +193,27 @@ body {
 .no-title-footer .reveal .slide-number {
     opacity: 0;
     transition: opacity 800ms ease-in-out;
+}
+
+@media (max-width: 720px) {
+    .reveal .footer #middlebox {
+        display: none;
+    }
+
+    .reveal .footer #copyright {
+        font-size: 2.3vmax;
+        vertical-align: baseline;
+    }
+
+    .reveal .footer img {
+        height: 60%;
+    }
+
+    .reveal .slide-number {
+        font-size: 4vmax;
+    }
+
+    .reveal .progress {
+        height: 1.5vh;
+    }
 }
